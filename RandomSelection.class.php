@@ -41,6 +41,15 @@ class RandomSelection {
 			$input,
 			$out
 		);
+
+		# Find any references to a surrounding template
+		preg_match_all(
+			"/<choicetemplate(?:(?:\\s[^>]*?)?\\sweight=[\"']?([^\\s>]+))?"
+				. "(?:\\s[^>]*)?>([\\s\\S]*?)<\\/choicetemplate>/",
+			$input,
+			$outTemplate
+		);
+
 		$r = 0;
 		for ( $i = 0; $i < $len; $i++ ) {
 			if ( strlen( $out[1][$i] ) == 0 ) {
@@ -62,6 +71,19 @@ class RandomSelection {
 				$input = $out[2][$i];
 				break;
 			}
+		}
+
+		# Surround by template if applicable
+		if ( isset( $outTemplate[2][0] ) ) {
+			$input = '{{' . $outTemplate[2][0] . '|' . $input . '}}';
+		}
+
+		# Parse tags and return
+		if ( isset( $argv['before'] ) ) {
+			$input = $argv['before'] . $input;
+		}
+		if ( isset( $argv['after'] ) ) {
+			$input .= $argv['after'];
 		}
 
 		return $parser->recursiveTagParse( $input );
