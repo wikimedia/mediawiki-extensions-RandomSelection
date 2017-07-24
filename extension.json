@@ -6,8 +6,13 @@
 	],
 	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:RandomSelection",
-	"description": "Displays a random option from the given set",
+	"descriptionmsg": "randomselection-desc",
 	"type": "parserhook",
+	"MessagesDirs": {
+		"RandomSelection": [
+			"i18n"
+		]
+	},
 	"AutoloadClasses": {
 		"RandomSelection": "RandomSelection.class.php"
 	},
