@@ -1,8 +1,10 @@
 {
 	"name": "RandomSelection",
-	"version": "2.2",
+	"version": "2.2.1",
 	"author": [
-		"Ross McClure"
+		"Ross McClure",
+		"Jack Phoenix",
+		"..."
 	],
 	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:RandomSelection",

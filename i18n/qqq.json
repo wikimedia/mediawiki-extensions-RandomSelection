@@ -1,4 +1,8 @@
 {
-	"@metadata": {},
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
 	"randomselection-desc": "{{desc|name=RandomSelection|url=https://www.mediawiki.org/wiki/Extension:RandomSelection}}"
 }
