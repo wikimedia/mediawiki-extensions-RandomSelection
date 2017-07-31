@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Kghbln"
 		]
 	},
-	"randomselection-desc": "Zeigt eine Zufallsoption von dem angegebenen Satz an"
+	"randomselection-desc": "Ermöglicht die zufällige Anzeige einer von mehreren vorgegebenen Anzeigeoptionen"
 }
