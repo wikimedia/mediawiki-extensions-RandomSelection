@@ -4,5 +4,6 @@
 			"Ross McClure"
 		]
 	},
-	"randomselection-desc": "Displays a random option from the given set"
+	"randomselection-desc": "Displays a random option from the given set",
+	"randomselection-invalidweights": "No valid choices"
 }

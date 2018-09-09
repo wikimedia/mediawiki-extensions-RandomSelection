@@ -4,5 +4,6 @@
 			"Kghbln"
 		]
 	},
-	"randomselection-desc": "{{desc|name=RandomSelection|url=https://www.mediawiki.org/wiki/Extension:RandomSelection}}"
+	"randomselection-desc": "{{desc|name=RandomSelection|url=https://www.mediawiki.org/wiki/Extension:RandomSelection}}",
+	"randomselection-invalidweights": "Shown as an error to the user if the combined sum of all weights is either 0 or is greater than 1.7*10^308."
 }
