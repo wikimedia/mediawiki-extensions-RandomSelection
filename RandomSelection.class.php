@@ -65,43 +65,57 @@ class RandomSelection {
 			$outTemplate
 		);
 
-		$r = 0;
+		// weights is cumulative in ascending order.
+		// So if we have 2 options equally weighted, by the end
+		// of all this, the weights should be 0.5 and 1.0
+		$weights = [];
+		$normalizingFactor = 0;
 		for ( $i = 0; $i < $len; $i++ ) {
-			if ( strlen( $out[1][$i] ) == 0 ) {
-				$out[1][$i] = 1;
-			} else {
-				$out[1][$i] = intval( $out[1][$i] );
+			$curWeight = 1;
+			if ( strlen( $out[1][$i] ) > 0 ) {
+				$curWeight = abs( floatval( $out[1][$i] ) );
 			}
-			$r += $out[1][$i];
+			$normalizingFactor += $curWeight;
+			$weights[$i] = $normalizingFactor;
 		}
 
-		# Choose an option at random
-		if ( $r <= 0 ) {
+		if ( $normalizingFactor === 0 ) {
+			// I guess we have 0 choices
 			return '';
 		}
-		$r = mt_rand( 1, $r );
-		for ( $i = 0; $i < $len; $i++ ) {
-			$r -= $out[1][$i];
-			if ( $r <= 0 ) {
-				$input = $out[2][$i];
+
+		foreach ( $weights as $index => &$weight ) {
+			$weight = $weight / $normalizingFactor;
+		}
+
+		// Ok, so now we have an array of ascending weights
+		// that are cumulative. e.g. [0.25, 0.5, 0.75, 1].
+		// We get a random float, and pick the item with the
+		// smallest weight that is greater than our float.
+		$r = mt_rand() / mt_getrandmax();
+
+		$selectedContent = '';
+		for ( $i = 0; i < count( $weights ); $i++ ) {
+			if ( $weights[$i] >= $r ) {
+				$selectedContent = $out[2][$i];
 				break;
 			}
 		}
 
 		# Surround by template if applicable
 		if ( isset( $outTemplate[2][0] ) ) {
-			$input = '{{' . $outTemplate[2][0] . '|' . $input . '}}';
+			$selectedContent = '{{' . $outTemplate[2][0] . '|' . $selectedContent . '}}';
 		}
 
 		# Parse tags and return
 		if ( isset( $argv['before'] ) ) {
-			$input = $argv['before'] . $input;
+			$selectedContent = $argv['before'] . $selectedContent;
 		}
 		if ( isset( $argv['after'] ) ) {
-			$input .= $argv['after'];
+			$selectedContent .= $argv['after'];
 		}
 
-		return $parser->recursiveTagParse( $input );
+		return $parser->recursiveTagParse( $selectedContent );
 	}
 
 	/**
