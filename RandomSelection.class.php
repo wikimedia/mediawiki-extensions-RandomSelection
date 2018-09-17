@@ -95,7 +95,7 @@ class RandomSelection {
 		$r = mt_rand() / mt_getrandmax();
 
 		$selectedContent = '';
-		for ( $i = 0; i < count( $weights ); $i++ ) {
+		for ( $i = 0; $i < count( $weights ); $i++ ) {
 			if ( $weights[$i] >= $r ) {
 				$selectedContent = $out[2][$i];
 				break;
