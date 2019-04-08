@@ -6,7 +6,7 @@
  *
  * @file
  * @ingroup Extensions
- * @author Ross McClure <http://www.mediawiki.org/wiki/User:Algorithm>
+ * @author Ross McClure <https://www.mediawiki.org/wiki/User:Algorithm>
  * @link https://www.mediawiki.org/wiki/Extension:RandomSelection Documentation
  */
 class RandomSelection {
