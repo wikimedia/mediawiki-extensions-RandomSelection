@@ -4,5 +4,6 @@
 			"Red Winged Duck"
 		]
 	},
-	"randomselection-desc": "Паказвае выпадковы выбар з вызначанага набору"
+	"randomselection-desc": "Паказвае выпадковы выбар з вызначанага набору",
+	"randomselection-invalidweights": "Няма слушнага выбару"
 }
