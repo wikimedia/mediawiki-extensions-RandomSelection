@@ -4,5 +4,6 @@
 			"Railfail536"
 		]
 	},
-	"randomselection-desc": "Wyświetla losową opcję z podanego zbioru"
+	"randomselection-desc": "Wyświetla losową opcję z podanego zbioru",
+	"randomselection-invalidweights": "Brak właściwych opcji wyboru"
 }
