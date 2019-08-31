@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Movses"
 		]
 	},
-	"randomselection-desc": "Показує випадкову опцію з наявного набору"
+	"randomselection-desc": "Показує випадкову опцію з наявного набору",
+	"randomselection-invalidweights": "Некоректний вибір"
 }
