@@ -1,10 +1,9 @@
 {
 	"name": "RandomSelection",
-	"version": "3.0.0",
+	"version": "2.3.0",
 	"author": [
 		"Ross McClure",
 		"Jack Phoenix",
-		"Brian Wolff",
 		"..."
 	],
 	"license-name": "GPL-2.0-or-later",
@@ -24,13 +23,7 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "RandomSelection::register",
-		"ParserOutputPostCacheTransform": "RandomSelection::onParserOutputPostCacheTransform",
-		"OutputPageCheckLastModified": "RandomSelection::onOutputPageCheckLastModified",
-		"OutputPageParserOutput": "RandomSelection::adjustSMaxage"
-	},
-	"config": {
-		"RandomSelectionSMaxage": 45,
-		"RandomSelectionDisableIfModifiedSince": true
+		"MagicWordwgVariableIDs": "RandomSelection::variableIds"
 	},
 	"manifest_version": 1
 }
