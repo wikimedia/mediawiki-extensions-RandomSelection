@@ -5,6 +5,5 @@
 			"Wladek92"
 		]
 	},
-	"randomselection-desc": "Affiche une option aléatoire issue de l’ensemble fourni",
-	"randomselection-invalidweights": "Aucun choix valide"
+	"randomselection-desc": "Affiche une option aléatoire issue de l’ensemble fourni"
 }

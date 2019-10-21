@@ -5,6 +5,5 @@
 			"Movses"
 		]
 	},
-	"randomselection-desc": "Показує випадкову опцію з наявного набору",
-	"randomselection-invalidweights": "Некоректний вибір"
+	"randomselection-desc": "Показує випадкову опцію з наявного набору"
 }

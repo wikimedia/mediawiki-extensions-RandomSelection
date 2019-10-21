@@ -5,6 +5,5 @@
 			"Rail"
 		]
 	},
-	"randomselection-desc": "Wyświetla losową opcję z podanego zbioru",
-	"randomselection-invalidweights": "Brak właściwych opcji wyboru"
+	"randomselection-desc": "Wyświetla losową opcję z podanego zbioru"
 }
