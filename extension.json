@@ -16,7 +16,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"RandomSelection": "RandomSelection.class.php"
+		"RandomSelection": "src/RandomSelection.php"
 	},
 	"ExtensionMessagesFiles": {
 		"RandomSelectionMagic": "RandomSelection.i18n.magic.php"

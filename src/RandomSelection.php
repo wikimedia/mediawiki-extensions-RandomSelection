@@ -14,19 +14,20 @@ class RandomSelection {
 	 * Register the <choose> tag and {{#choose:option 1|...|option N}} function
 	 * with the Parser.
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 * @return bool
 	 */
 	public static function register( &$parser ) {
-		$parser->setHook( 'choose', array( __CLASS__, 'render' ) );
-		$parser->setFunctionHook( 'choose', array( __CLASS__, 'renderParserFunction' ), Parser::SFH_OBJECT_ARGS );
+		$parser->setHook( 'choose', [ __CLASS__, 'render' ] );
+		$parser->setFunctionHook( 'choose', [ __CLASS__, 'renderParserFunction' ],
+			Parser::SFH_OBJECT_ARGS );
 		return true;
 	}
 
 	/**
 	 * Register the magic word ID.
 	 *
-	 * @param array $variableIds
+	 * @param array &$variableIds
 	 * @return bool
 	 */
 	public static function variableIds( &$variableIds ) {
@@ -40,6 +41,7 @@ class RandomSelection {
 	 * @param string $input User-supplied input
 	 * @param array $argv User-supplied arguments to the tag, e.g. <choose uncached>...</choose>
 	 * @param Parser $parser
+	 * @return string
 	 */
 	public static function render( $input, $argv, $parser ) {
 		# Prevent caching if specified so by the user
@@ -119,22 +121,23 @@ class RandomSelection {
 	/**
 	 * Callback for the {{#choose:}} magic word magic (see register() in this file)
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 * @param PPFrame $frame
 	 * @param array $args User-supplied arguments
+	 * @return string
 	 */
 	public static function renderParserFunction( &$parser, $frame, $args ) {
-		$options = array();
+		$options = [];
 		$r = 0;
 
 		// First one is not an object
 		$arg = array_shift( $args );
 		$parts = explode( '=', $arg, 2 );
 		if ( count( $parts ) == 2 ) {
-			$options[] = array( intval( trim( $parts[0] ) ), $parts[1] );
+			$options[] = [ intval( trim( $parts[0] ) ), $parts[1] ];
 			$r += intval( trim( $parts[0] ) );
 		} elseif ( count( $parts ) == 1 ) {
-			$options[] = array( 1, $parts[0] );
+			$options[] = [ 1, $parts[0] ];
 			$r += 1;
 		}
 
@@ -145,10 +148,10 @@ class RandomSelection {
 			$valueNode = $bits['value'];
 			if ( $index === '' ) {
 				$name = trim( $frame->expand( $nameNode ) );
-				$options[] = array( intval( $name ), $valueNode );
+				$options[] = [ intval( $name ), $valueNode ];
 				$r += intval( $name );
 			} else {
-				$options[] = array( 1, $valueNode );
+				$options[] = [ 1, $valueNode ];
 				$r += 1;
 			}
 		}

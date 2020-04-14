@@ -6,14 +6,14 @@
  * @ingroup Extensions
  */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English */
-$magicWords['en'] = array(
-	'choose' => array( 0, 'choose' ),
-);
+$magicWords['en'] = [
+	'choose' => [ 0, 'choose' ],
+];
 
 /** Finnish (suomi) */
-$magicWords['fi'] = array(
-	'choose' => array( 0, 'valitse' ),
-);
+$magicWords['fi'] = [
+	'choose' => [ 0, 'valitse' ],
+];
