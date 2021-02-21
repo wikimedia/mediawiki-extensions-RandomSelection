@@ -1,6 +1,7 @@
 /composer.lock
 /node_modules/
 /vendor/
+/.eslintcache
 *~
 *.kate-swp
 .*.swp
