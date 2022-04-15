@@ -1,4 +1,5 @@
 {
+	"name": "RandomSelection",
 	"private": true,
 	"scripts": {
 		"test": "grunt test"
