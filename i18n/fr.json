@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
-	"randomselection-desc": "Affiche une option aléatoire issue de l’ensemble fourni"
+	"randomselection-desc": "Affiche une option aléatoire de l’ensemble fourni"
 }
