@@ -28,5 +28,11 @@
 		"ParserFirstCallInit": "RandomSelection::register",
 		"MagicWordwgVariableIDs": "RandomSelection::variableIds"
 	},
+	"config": {
+		"RandomSelectionAllowUncached": {
+			"value": true,
+			"description": "Whether the 'uncached' attribute should be enabled"
+		}
+	},
 	"manifest_version": 2
 }
