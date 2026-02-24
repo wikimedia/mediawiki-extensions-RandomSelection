@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * RandomSelection -- randomly displays one of the given options.
  * Usage: <choose><option>A</option><option>B</option></choose>
@@ -44,8 +47,9 @@ class RandomSelection {
 	 * @return string
 	 */
 	public static function render( $input, $argv, $parser ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 		# Prevent caching if specified so by the user
-		if ( isset( $argv['uncached'] ) ) {
+		if ( isset( $argv['uncached'] ) && $config->get( 'RandomSelectionAllowUncached' ) ) {
 			$parser->getOutput()->updateCacheExpiry( 0 );
 		}
 
