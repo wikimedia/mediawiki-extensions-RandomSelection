@@ -17,25 +17,21 @@ class RandomSelection {
 	 * Register the <choose> tag and {{#choose:option 1|...|option N}} function
 	 * with the Parser.
 	 *
-	 * @param Parser &$parser
-	 * @return bool
+	 * @param MediaWiki\Parser\Parser &$parser
 	 */
 	public static function register( &$parser ) {
 		$parser->setHook( 'choose', [ __CLASS__, 'render' ] );
 		$parser->setFunctionHook( 'choose', [ __CLASS__, 'renderParserFunction' ],
 			Parser::SFH_OBJECT_ARGS );
-		return true;
 	}
 
 	/**
 	 * Register the magic word ID.
 	 *
 	 * @param array &$variableIds
-	 * @return bool
 	 */
 	public static function variableIds( &$variableIds ) {
 		$variableIds[] = 'choose';
-		return true;
 	}
 
 	/**
@@ -43,7 +39,7 @@ class RandomSelection {
 	 *
 	 * @param string $input User-supplied input
 	 * @param array $argv User-supplied arguments to the tag, e.g. <choose uncached>...</choose>
-	 * @param Parser $parser
+	 * @param MediaWiki\Parser\Parser $parser
 	 * @return string
 	 */
 	public static function render( $input, $argv, $parser ) {
@@ -125,8 +121,8 @@ class RandomSelection {
 	/**
 	 * Callback for the {{#choose:}} magic word magic (see register() in this file)
 	 *
-	 * @param Parser &$parser
-	 * @param PPFrame $frame
+	 * @param MediaWiki\Parser\Parser &$parser
+	 * @param MediaWiki\Parser\PPFrame $frame
 	 * @param array $args User-supplied arguments
 	 * @return string
 	 */
