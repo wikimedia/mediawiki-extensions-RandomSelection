@@ -1,6 +1,6 @@
 {
 	"name": "RandomSelection",
-	"version": "2.3.0",
+	"version": "2.4.0",
 	"author": [
 		"Ross McClure",
 		"Jack Phoenix",
@@ -11,7 +11,7 @@
 	"descriptionmsg": "randomselection-desc",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"MessagesDirs": {
 		"RandomSelection": [
@@ -26,7 +26,7 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "RandomSelection::register",
-		"MagicWordwgVariableIDs": "RandomSelection::variableIds"
+		"GetMagicVariableIDs": "RandomSelection::variableIds"
 	},
 	"config": {
 		"RandomSelectionAllowUncached": {
